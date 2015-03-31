@@ -1,0 +1,82 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 31-03-2015 a las 15:37:57
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `basededatoslocal`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `mensajes`
+-- 
+
+CREATE TABLE `mensajes` (
+  `id` int(11) NOT NULL auto_increment,
+  `Asunto` varchar(255) NOT NULL,
+  `Mensaje` text NOT NULL,
+  `leido` int(1) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- 
+-- Volcar la base de datos para la tabla `mensajes`
+-- 
+
+INSERT INTO `mensajes` VALUES (3, 'Prueba de mensaje', 'Mensaje', 1);
+INSERT INTO `mensajes` VALUES (2, 'Asunto', 'Descripción', 1);
+INSERT INTO `mensajes` VALUES (4, 'Prueba de mensaje', 'mensaje cuerpo del mensaje', 1);
+INSERT INTO `mensajes` VALUES (5, 'prueba', 'mensaje', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `productos`
+-- 
+
+CREATE TABLE `productos` (
+  `Clave` int(11) NOT NULL auto_increment,
+  `Nombre` varchar(255) collate utf8_unicode_ci NOT NULL,
+  `Descripcion` text collate utf8_unicode_ci NOT NULL,
+  `Precio` float NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `Imagen` varchar(255) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`Clave`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34 ;
+
+-- 
+-- Volcar la base de datos para la tabla `productos`
+-- 
+
+INSERT INTO `productos` VALUES (26, 'Curso de Wordpress', 'En este temas estamos trabajando con un curso de wordpress Begin                                                        ', 360, 5, 'descarga (4).png');
+INSERT INTO `productos` VALUES (25, 'Curso de Java', 'En este curso tratamos temas de JAVA         ', 2400, 3, 'descarga (5).png');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuario`
+-- 
+
+CREATE TABLE `usuario` (
+  `Clave` int(11) NOT NULL auto_increment,
+  `usuario` varchar(255) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  PRIMARY KEY  (`Clave`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuario`
+-- 
+
+INSERT INTO `usuario` VALUES (1, 'admin', '123', 1);
+INSERT INTO `usuario` VALUES (4, 'admin', 'admin', 1);
+INSERT INTO `usuario` VALUES (3, 'Oscar', '123', 2);
