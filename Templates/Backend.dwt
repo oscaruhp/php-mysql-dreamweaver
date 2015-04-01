@@ -23,13 +23,14 @@
               <div class='logo-icon'>
                 <i class='icon-beer'></i>
               </div>
-              Hierapolis
+              Iniciar Sesión
             </h1>
           </div>
         </div>
       </div>
       <div class='row'>
-        <div class='col-lg-12'>
+        <div class='col-lg-12'><!-- TemplateBeginEditable name="Contenido" -->
+        
           <form>
             <fieldset class='text-center'>
               <legend>Login to your account</legend>
@@ -52,6 +53,7 @@
               </div>
             </fieldset>
           </form>
+          <!-- TemplateEndEditable -->
         </div>
       </div>
     </div>
