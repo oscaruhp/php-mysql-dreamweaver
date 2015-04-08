@@ -31,8 +31,8 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 if (!isset($_SESSION)) {
   session_start();
 }
-$MM_authorizedUsers = "";
-$MM_donotCheckaccess = "true";
+$MM_authorizedUsers = "1";
+$MM_donotCheckaccess = "false";
 
 // *** Restrict Access To Page: Grant or deny access to this page
 function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) { 
@@ -53,7 +53,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
     if (in_array($UserGroup, $arrGroups)) { 
       $isValid = true; 
     } 
-    if (($strUsers == "") && true) { 
+    if (($strUsers == "") && false) { 
       $isValid = true; 
     } 
   } 
@@ -238,10 +238,14 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
         <ul id='dock'>
         <li class='launcher'> <i class='icon-file-text-alt'></i> <a href="AgregarProductos.php">Agregar</a> </li>
   <li class='launcher'> <i class='icon-list'></i> <a href="VerProductos.php">Lista</a> </li>
+ 
+  <?php if($_SESSION['MM_UserGroup']==1) { ?>
+  
   <li class='launcher'> <i class='icon-user'></i> <a href='Usuarios.php'>Usuarios</a> </li>
           <li class='launcher'> <i class='icon-envelope'></i> <a href='Mensajes.php'>Mensajes</a> </li>
+          
         </ul>
-       
+       <?php } ?>
         <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
       </section>
       <!-- Tools -->

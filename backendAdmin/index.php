@@ -146,10 +146,14 @@ if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers,
         <ul id='dock'>
         <li class='launcher'> <i class='icon-file-text-alt'></i> <a href="AgregarProductos.php">Agregar</a> </li>
   <li class='launcher'> <i class='icon-list'></i> <a href="VerProductos.php">Lista</a> </li>
+ 
+  <?php if($_SESSION['MM_UserGroup']==1) { ?>
+  
   <li class='launcher'> <i class='icon-user'></i> <a href='Usuarios.php'>Usuarios</a> </li>
           <li class='launcher'> <i class='icon-envelope'></i> <a href='Mensajes.php'>Mensajes</a> </li>
+          
         </ul>
-       
+       <?php } ?>
         <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
       </section>
       <!-- Tools -->
